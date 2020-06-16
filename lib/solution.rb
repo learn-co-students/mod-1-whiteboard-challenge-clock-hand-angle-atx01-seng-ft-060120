@@ -4,19 +4,16 @@ def clock_angle(time)
     hours = split_time[0].to_i
     minutes = split_time[1].to_i
 
-    total_minutes = nil
+    #calculate degrees
+    minute_degrees = minutes * 6
 
-    #calculate total minutes
-    
     if hours == 12
-        total_minutes = minutes
+        hour_degrees = minutes * 0.5
     else
-        total_minutes = (hours * 60) + minutes
+        hour_degrees = ((hours * 60) + minutes) * 0.5
     end
 
-    #calculate degrees
-    hour_degrees = total_minutes * 0.5
-    minute_degrees = minutes * 6
+    #calculate difference
 
     if minute_degrees > hour_degrees
         360 - (minute_degrees - hour_degrees)
